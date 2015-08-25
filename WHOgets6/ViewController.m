@@ -79,7 +79,6 @@
 
 - (void)turnTheTable
 {
-        
     CABasicAnimation* rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     double endValue = _startValue+(rand()%100)/100.0 * M_PI + M_PI*(rand()%5+5);
 

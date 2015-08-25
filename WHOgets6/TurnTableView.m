@@ -98,12 +98,12 @@ static inline void drawArc(CGContextRef ctx, CGPoint point, float radius,float a
 - (CATextLayer*)textLayer:(NSString*)text rotate:(CGFloat)angel
 {
     CATextLayer *txtLayer = [CATextLayer layer];
-    txtLayer.frame = CGRectMake(0, 0, self.frame.size.width-self.layer.borderWidth*2-2, 25);
-    txtLayer.anchorPoint = CGPointMake(0.5, 0.5);
+    txtLayer.frame = CGRectMake(0, 0, self.frame.size.width-self.layer.borderWidth*2-8, 25);
+    txtLayer.anchorPoint = CGPointMake(0.5, 0.5); //绕中心点旋转
     txtLayer.string = text;
     txtLayer.alignmentMode = [NSString stringWithFormat:@"right"];
     txtLayer.fontSize = 18;
-    [txtLayer setPosition:CGPointMake(self.frame.size.width/2, self.frame.size.width/2)];
+    [txtLayer setPosition:CGPointMake(self.frame.size.width/2, self.frame.size.width/2)];//Position大致就是center的概念，
     txtLayer.transform = CATransform3DMakeRotation(angel,0,0,1);
     return txtLayer;
 }
