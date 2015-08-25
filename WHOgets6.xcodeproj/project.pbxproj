@@ -14,6 +14,8 @@
 		2980CC301B8AF4EE0054C441 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2980CC2F1B8AF4EE0054C441 /* Images.xcassets */; };
 		2980CC331B8AF4EE0054C441 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2980CC311B8AF4EE0054C441 /* LaunchScreen.xib */; };
 		2980CC3F1B8AF4EE0054C441 /* WHOgets6Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2980CC3E1B8AF4EE0054C441 /* WHOgets6Tests.m */; };
+		2980CC4A1B8B022C0054C441 /* TurnTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2980CC491B8B022B0054C441 /* TurnTableView.m */; };
+		298A9DE81B8C0E3C00CB444E /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = 298A9DE71B8C0E3C00CB444E /* red.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		2980CC381B8AF4EE0054C441 /* WHOgets6Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WHOgets6Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2980CC3D1B8AF4EE0054C441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2980CC3E1B8AF4EE0054C441 /* WHOgets6Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHOgets6Tests.m; sourceTree = "<group>"; };
+		2980CC481B8B022B0054C441 /* TurnTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurnTableView.h; sourceTree = "<group>"; };
+		2980CC491B8B022B0054C441 /* TurnTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurnTableView.m; sourceTree = "<group>"; };
+		298A9DE71B8C0E3C00CB444E /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +86,13 @@
 		2980CC211B8AF4EE0054C441 /* WHOgets6 */ = {
 			isa = PBXGroup;
 			children = (
+				298A9DE71B8C0E3C00CB444E /* red.png */,
 				2980CC261B8AF4EE0054C441 /* AppDelegate.h */,
 				2980CC271B8AF4EE0054C441 /* AppDelegate.m */,
 				2980CC291B8AF4EE0054C441 /* ViewController.h */,
 				2980CC2A1B8AF4EE0054C441 /* ViewController.m */,
+				2980CC481B8B022B0054C441 /* TurnTableView.h */,
+				2980CC491B8B022B0054C441 /* TurnTableView.m */,
 				2980CC2C1B8AF4EE0054C441 /* Main.storyboard */,
 				2980CC2F1B8AF4EE0054C441 /* Images.xcassets */,
 				2980CC311B8AF4EE0054C441 /* LaunchScreen.xib */,
@@ -200,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2980CC2E1B8AF4EE0054C441 /* Main.storyboard in Resources */,
+				298A9DE81B8C0E3C00CB444E /* red.png in Resources */,
 				2980CC331B8AF4EE0054C441 /* LaunchScreen.xib in Resources */,
 				2980CC301B8AF4EE0054C441 /* Images.xcassets in Resources */,
 			);
@@ -221,6 +230,7 @@
 			files = (
 				2980CC2B1B8AF4EE0054C441 /* ViewController.m in Sources */,
 				2980CC281B8AF4EE0054C441 /* AppDelegate.m in Sources */,
+				2980CC4A1B8B022C0054C441 /* TurnTableView.m in Sources */,
 				2980CC251B8AF4EE0054C441 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +428,7 @@
 				2980CC441B8AF4EE0054C441 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2980CC451B8AF4EE0054C441 /* Build configuration list for PBXNativeTarget "WHOgets6Tests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +437,7 @@
 				2980CC471B8AF4EE0054C441 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
