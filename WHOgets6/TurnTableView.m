@@ -35,7 +35,7 @@ static inline void drawArc(CGContextRef ctx, CGPoint point, float radius,float a
     self = [super initWithFrame:frame];
     if (self) {
         self.layer.cornerRadius = self.frame.size.width/2;
-        self.layer.borderWidth = 10;
+        self.layer.borderWidth = 9;
         self.layer.borderColor = [UIColor colorWithRed:243/255.0 green:88/255.0 blue:31/255.0 alpha:1].CGColor;
         [self setData:dataDic];
     }

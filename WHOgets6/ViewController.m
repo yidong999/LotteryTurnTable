@@ -26,19 +26,7 @@
     srand((unsigned)time(0));
 
     UIColor *color= [UIColor colorWithRed:115/255.0 green:172/255.0 blue:42/255.0 alpha:1];
-    
     [self.view setBackgroundColor:color];
-    
-    UIColor *color2= [UIColor colorWithRed:250/255.0 green:182/255.0 blue:64/255.0 alpha:1];
-    
-    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 90, 40)];
-    btn.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2+140);
-    [btn setBackgroundColor:color2];
-    [btn setTitle:@"WHO？!" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(turnTheTable) forControlEvents:UIControlEventTouchUpInside];
-    [btn.layer setCornerRadius:10];
-    [self.view addSubview:btn];
     
     [self setUpUI];
 }
@@ -76,6 +64,17 @@
     [self.pointer setImage:[UIImage imageNamed:@"red.png"]];
     [self.pointer setBackgroundColor:[UIColor clearColor]];
     [self.view addSubview:self.pointer];
+    
+    UIColor *color2= [UIColor colorWithRed:250/255.0 green:182/255.0 blue:64/255.0 alpha:1];
+
+    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 90, 40)];
+    btn.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2+140);
+    [btn setBackgroundColor:color2];
+    [btn setTitle:@"WHO？!" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(turnTheTable) forControlEvents:UIControlEventTouchUpInside];
+    [btn.layer setCornerRadius:10];
+    [self.view addSubview:btn];
 }
 
 - (void)turnTheTable
