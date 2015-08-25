@@ -53,19 +53,16 @@
 {
     NSDictionary *dataDic = [NSDictionary
                              dictionaryWithObjectsAndKeys:
-                             @(1),@"bright",
-                             @(1),@"chaodong",
-                             @(1),@"chenhuang",
-                             @(1),@"justiny",
-                             @(1),@"mingliang",
-                             @(1),@"mona",
-                             @(1),@"pang",
-                             @(1),@"pom",
-                             @(1),@"soap",
-                             @(1),@"xiangru",
-                             @(1),@"yanjun",
-                             @(2),@"yvan",
-                             @(2),@"jackzk",
+                             @(1),@"Jamie",
+                             @(1),@"Cercie",
+                             @(1),@"Joffery",
+                             @(2),@"Imp",
+                             @(1),@"Ned",
+                             @(3),@"Arya",
+                             @(2),@"Shae",
+                             @(1),@"Sansa",
+                             @(3),@"Margaery",
+                             @(2),@"Baelish",
                              nil];
     
     self.turnTableView = [[TurnTableView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width - 40, [UIScreen mainScreen].bounds.size.width - 40)withData:dataDic];
