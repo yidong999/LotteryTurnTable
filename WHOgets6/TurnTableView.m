@@ -89,18 +89,23 @@ static inline void drawArc(CGContextRef ctx, CGPoint point, float radius,float a
         drawArc(ctx, center, self.frame.size.width/2-self.layer.borderWidth, angle_start, angle_end, color);
         i++;
 
-        CATextLayer *txtLayer = [CATextLayer layer];
-        txtLayer.frame = CGRectMake(0, 0, self.frame.size.width-self.layer.borderWidth*2-2, 25);
-        txtLayer.anchorPoint = CGPointMake(0.5, 0.5);
-        txtLayer.string = (NSString*)key;
-        txtLayer.alignmentMode = [NSString stringWithFormat:@"right"];
-        txtLayer.fontSize = 18;
-//        txtLayer.font = [UIFont fontWithName:<#(NSString *)#> size:(CGFloat)]
-        [txtLayer setPosition:CGPointMake(self.frame.size.width/2, self.frame.size.width/2)];
-        txtLayer.transform = CATransform3DMakeRotation(angle_start + (angle_end-angle_start)/2,0,0,1);
+        CATextLayer *txtLayer = [self textLayer:key rotate:angle_start + (angle_end-angle_start)/2];
         [self.layer addSublayer:txtLayer];
 //        }
     }
+}
+
+- (CATextLayer*)textLayer:(NSString*)text rotate:(CGFloat)angel
+{
+    CATextLayer *txtLayer = [CATextLayer layer];
+    txtLayer.frame = CGRectMake(0, 0, self.frame.size.width-self.layer.borderWidth*2-2, 25);
+    txtLayer.anchorPoint = CGPointMake(0.5, 0.5);
+    txtLayer.string = text;
+    txtLayer.alignmentMode = [NSString stringWithFormat:@"right"];
+    txtLayer.fontSize = 18;
+    [txtLayer setPosition:CGPointMake(self.frame.size.width/2, self.frame.size.width/2)];
+    txtLayer.transform = CATransform3DMakeRotation(angel,0,0,1);
+    return txtLayer;
 }
 
 @end
