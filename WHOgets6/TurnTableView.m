@@ -16,15 +16,23 @@ static inline float radians(double degrees) {
 
 static inline void drawArc(CGContextRef ctx, CGPoint point, float radius,float angle_start, float angle_end, UIColor* color)
 {
+    //设置填充颜色
     CGContextSetFillColor(ctx, CGColorGetComponents( [color CGColor]));
+    //移动画笔
     CGContextMoveToPoint(ctx, point.x, point.y);
+    //画扇形
     CGContextAddArc(ctx, point.x, point.y, radius,  angle_start, angle_end, 0);
+    //填充
     CGContextFillPath(ctx);
 
+    //画中间的白色分割线
     CGContextSetRGBStrokeColor(ctx, 1, 1, 1, 1);
+    //设置线条宽度
     CGContextSetLineWidth(ctx, 2);
     CGContextMoveToPoint(ctx, point.x, point.y);
+    //算出线另一端的坐标
     CGPoint point1 = CGPointMake(point.x + radius*cos(angle_start), point.y + radius*sin(angle_start));
+    //画线
     CGContextAddLineToPoint(ctx, point1.x, point1.y);
     CGContextStrokePath(ctx);
 }
@@ -72,6 +80,8 @@ static inline void drawArc(CGContextRef ctx, CGPoint point, float radius,float a
     
     UIColor *yelloColor = [UIColor colorWithRed:249/255.0 green:226/255.0 blue:55/255.0 alpha:1];
     UIColor *redColor = [UIColor colorWithRed:247/255.0 green:148/255.0 blue:53/255.0 alpha:1];
+    
+    //遍历字典，画饼
     for (NSString *key in self.cornerDic) {
 //        if ([key isEqualToString:@"Imp"]) {
         
@@ -86,6 +96,7 @@ static inline void drawArc(CGContextRef ctx, CGPoint point, float radius,float a
         {
             color = redColor;
         }
+        //画扇形
         drawArc(ctx, center, self.frame.size.width/2-self.layer.borderWidth, angle_start, angle_end, color);
         i++;
 
@@ -98,12 +109,18 @@ static inline void drawArc(CGContextRef ctx, CGPoint point, float radius,float a
 - (CATextLayer*)textLayer:(NSString*)text rotate:(CGFloat)angel
 {
     CATextLayer *txtLayer = [CATextLayer layer];
+    //设置每个layer的长度都为转盘的直径
     txtLayer.frame = CGRectMake(0, 0, self.frame.size.width-self.layer.borderWidth*2-8, 25);
-    txtLayer.anchorPoint = CGPointMake(0.5, 0.5); //绕中心点旋转
+    
+    //设置锚点，绕中心点旋转
+    txtLayer.anchorPoint = CGPointMake(0.5, 0.5);
     txtLayer.string = text;
     txtLayer.alignmentMode = [NSString stringWithFormat:@"right"];
     txtLayer.fontSize = 18;
-    [txtLayer setPosition:CGPointMake(self.frame.size.width/2, self.frame.size.width/2)];//Position大致就是center的概念，
+    
+    //layer没有center，用Position
+    [txtLayer setPosition:CGPointMake(self.frame.size.width/2, self.frame.size.width/2)];
+    //旋转
     txtLayer.transform = CATransform3DMakeRotation(angel,0,0,1);
     return txtLayer;
 }
